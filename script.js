@@ -20,9 +20,11 @@ let images= [
 ]
 
 let body=document.querySelector('body');
+let audio = new Audio('./audio/water drop sound effect.m4a');
 
 body.onclick =(e) => {
 let x= e.pageX - e.target.offsetLeft;
+
 let y= e.pageY - e.target.offsetTop;
 
 let splash=document.createElement('span');
@@ -33,6 +35,8 @@ let bg=images[Math.floor(Math.random()*images.length)]
 splash.style.backgroundImage=bg;
 
 body.appendChild(splash);
+audio.currentTime = 0; 
+  audio.play();
 
 setTimeout(() => {
     splash.remove()
